@@ -94,15 +94,37 @@ h3 {
     margin: auto;
 }
 
+.arrow-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    width: 5%;
+    height: 3%;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    font-size: x-large;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--animation-duration) ease-in;
+}
+
 /* Navbar */
 #navbar {
+    position: fixed;
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-pink);
     align-items: center;
+    background-color: transparent;
     color: var(--color-white);
-    padding: 16px;
+    padding: 0 16px;
     cursor: default;
+    width: 100%;
+}
+
+.navbar--scroll {
+    position: fixed;
+    background-color: #fe918d;
 }
 
 .navbar__toggle-btn {
@@ -127,23 +149,21 @@ h3 {
     padding: 8px 12px;
     margin: 0 4px;
     cursor: pointer;
+    border: transparent;
     border-radius: var(--size-border-radius);
-}
-
-.navbar__menu__item.active {
-    border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
+    border-color: var(--color-white);
     background-color: var(--color-dark-pink);
-    border-radius: var(--size-border-radius);
 }
 
 /* Home */
 #home {
-    background: url(./imgs/home_background_12930ad7e0.png) center/cover no-repeat;
     padding: 40px;
+    padding-top: 120px;
     text-align: center;
+    background: url(./imgs/home_background_12930ad7e0.png) center/cover no-repeat;
 }
 
 .home__avatar {
@@ -306,6 +326,13 @@ h3 {
 .work_projects {
     display: flex;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration) ease-out;
+}
+
+.work_projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -317,6 +344,10 @@ h3 {
     height: 250px;
     margin: 2px;
     background-color: var(--color-light-white);
+}
+
+.project.invisible {
+    display: none;
 }
 
 .project__img {
@@ -421,9 +452,18 @@ h3 {
     .navbar__toggle-btn {
         display: block;
     }
+
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .navbar.show {
+        background-color: var(--color-pink) !important;
+    }
+
+    .navbar__logo {
+        margin-top: 3%;
     }
 
     .navbar__menu {
@@ -431,6 +471,12 @@ h3 {
         flex-direction: column;
         text-align: center;
         width: 100%;
+    }
+
+    .navbar__menu.show {
+        display: block;
+        height: 30%;
+        background-color: var(--color-pink); 
     }
 
     .about__majors {

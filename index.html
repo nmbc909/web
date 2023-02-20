@@ -15,38 +15,40 @@
     <script defer src="./main.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-   <nav id="navbar">
-    <div class="navbar__logo">
-        <i class="fa-solid fa-video"></i>
-        <a href="#">오해원</a> 
-    </div>
-    <ul class="navbar__menu">
-        <li class="navbar__menu__item active">Home</li>
-        <li class="navbar__menu__item">About</li>
-        <li class="navbar__menu__item">Skills</li>
-        <li class="navbar__menu__item">My work</li>
-        <li class="navbar__menu__item">Testimonials</li>
-        <li class="navbar__menu__item">Contact</li>
-    </ul>
-
-    <!-- Toggle Button -->
-    <button class="navbar__toggle-btn">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-   </nav>
-   
-   <!-- Home -->
-   <section id="home">
-    <img 
-        src="./imgs/queen.jpeg" 
-        alt="favicon" 
-        class="home__avatar"
-    />
-    <h1 class="home__title">나는 세최미<br />킹갓 오해원!!</h1>
-    <h2 class="home__description">열심히 공부하고 끊임없이 성장하는 개발자가 되고 싶어요!</h2>
-    <button class="home__contact">Contact me</button>
-   </section>
+     <!-- Navbar -->
+     <nav id="navbar" class="navbar">
+        <div class="navbar__logo">
+            <i class="fa-solid fa-video"></i>
+            <a href="#">오해원</a> 
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item active">Home</li>
+            <li class="navbar__menu__item">About</li>
+            <li class="navbar__menu__item">Skills</li>
+            <li class="navbar__menu__item">My work</li>
+            <li class="navbar__menu__item">Testimonials</li>
+            <li class="navbar__menu__item">Contact</li>
+        </ul>
+    
+        <!-- Toggle Button -->
+        <button class="navbar__toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+       
+    <!-- Home -->
+    <section id="home">
+        <div class="home__containner">
+            <img 
+            src="./imgs/queen.jpeg" 
+            alt="favicon" 
+            class="home__avatar"
+        />
+            <h1 class="home__title">나는 세최미<br />킹갓 오해원!!</h1>
+            <h2 class="home__description">열심히 공부하고 끊임없이 성장하는 개발자가 되고 싶어요!</h2>
+            <button class="home__contact">Contact me</button>
+        </div>
+    </section>
 
     <!-- About -->
    <section id="about" class="section section__container">
@@ -176,20 +178,20 @@
         <h3>Projects</h3>
     
         <div class="work__categories">
-            <button class="category__btn">All<span class="category__count">2</span></button>
-            <button class="category__btn">Front-end<span class="category__count">1</span></button>
-            <button class="category__btn">Mobile<span class="category__count">1</span></button>
+            <button class="category__btn active" data-id="all">All<span class="category__count">2</span></button>
+            <button class="category__btn" data-id="web">Front-end<span class="category__count">1</span></button>
+            <button class="category__btn" data-id="mobile">Mobile<span class="category__count">1</span></button>
         </div>
     
         <div class="work_projects">
-            <a href="https://github.com/pushcat-dev/kidfit_front" class="project" target="_blank">
+            <a href="https://github.com/pushcat-dev/kidfit_front" class="project" target="_blank" data-id="web">
                 <img src="./imgs/navbar_1904e260a5.png" alt="" class="project__img">
                 <div class="project__description">
                     <h3>Kidfit</h3>
                     <span>아이들의 건강관리를 위한 웹 서비스</span>
                 </div>
             </a>
-            <a href="https://github.com/pushcat-dev/Motiontap-IOS.git" class="project" target="_blank">
+            <a href="https://github.com/pushcat-dev/Motiontap-IOS.git" class="project" target="_blank" data-id="mobile">
                 <img src="./imgs/navbar_1904e260a5.png" alt="" class="project__img">
                 <div class="project__description">
                     <h3>Motiontap-iOS</h3>
@@ -238,5 +240,9 @@
     <h2 class="contact__email">nmbc9090@naver.com</h2>
     <!-- <div class="contact__links"></div> -->
    </section>
+   
+   <button class="arrow-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+   </button>
 </body>
 </html>
